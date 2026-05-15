@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="ZomatoFoodApiDatabaseScript/ZomatoFoodApiDatabaseScript.sqlproj">
+    <Build />
+    <Deploy />
+  </Project>
+</Solution>
