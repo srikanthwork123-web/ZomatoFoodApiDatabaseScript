@@ -62,5 +62,6 @@
     <Build Include="SqlScriptFiles\HotelMangmentDatabaseScript.sql" />
     <Build Include="SqlScriptFiles\MidLandDatabaseScript.sql" />
     <Build Include="SqlScriptFiles\NorthWind_DBDatabaseScript.sql" />
+    <Build Include="SqlScriptFiles\RestaurantDBDatabaseScript.sql" />
   </ItemGroup>
 </Project>
