@@ -64,4 +64,7 @@
     <Build Include="SqlScriptFiles\NorthWind_DBDatabaseScript.sql" />
     <Build Include="SqlScriptFiles\RestaurantDBDatabaseScript.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="SqlScriptFiles\NorthWindDb.sql" />
+  </ItemGroup>
 </Project>
