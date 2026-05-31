@@ -6,7 +6,7 @@
     <Name>ZomatoFoodApiDatabaseScript</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{d77dd8e7-47d7-45c0-aeb0-ff79000b7513}</ProjectGuid>
+    <ProjectGuid>{cf1ef5e8-7d76-36f3-fef5-c6743c3b4ff4}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql170DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
