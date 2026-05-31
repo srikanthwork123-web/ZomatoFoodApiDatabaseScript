@@ -1,5 +1,5 @@
 <Solution>
-  <Project Path="ZomatoFoodApiDatabaseScript/ZomatoFoodApiDatabaseScript.sqlproj">
+  <Project Path="ZomatoFoodApiDatabaseScript/ZomatoFoodApiDatabaseScript.sqlproj" Id="d77dd8e7-47d7-45c0-aeb0-ff79000b7513">
     <Build />
     <Deploy />
   </Project>
