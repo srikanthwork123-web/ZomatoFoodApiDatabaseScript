@@ -2474,3 +2474,61 @@ select 'employee is inserted successfuly'
 
 end
 GO
+--------------------new sxcript error log added--
+Go
+IF NOT EXISTS (
+    SELECT 1
+    FROM INFORMATION_SCHEMA.COLUMNS
+    WHERE TABLE_NAME = 'ProjectLevelErrorlog'
+      AND COLUMN_NAME = 'username'
+)
+BEGIN
+    ALTER TABLE ProjectLevelErrorlog
+    ADD username VARCHAR(MAX);
+    PRINT 'Column [username] added successfully.';
+END
+ELSE
+BEGIN
+    PRINT 'Column [username] already exists in ProjectLevelErrorlog.';
+END
+Go
+-------------------------check for colum exist or not,if not present then only alter
+IF NOT EXISTS (
+    SELECT 1
+    FROM INFORMATION_SCHEMA.COLUMNS
+    WHERE TABLE_NAME = 'ProjectLevelErrorlog'
+      AND COLUMN_NAME = 'ErrorLogTime'
+)
+BEGIN
+    ALTER TABLE ProjectLevelErrorlog
+    ADD ErrorLogTime datetime;
+    PRINT 'Column [ErrorLogTime] added successfully.';
+END
+ELSE
+BEGIN
+    PRINT 'Column [ErrorLogTime] already exists in ProjectLevelErrorlog.';
+END
+Go
+----
+Go
+Alter  Procedure Usp_AddProjectLevelErrorlog(@StatusCode varchar(max),@ErrorMessage varchar(max),@StackTraceError varchar(max),@InnerExceptionError varchar(max),@username varchar(max)=null )  
+as begin  
+Set nocount on --it prevents the no of rows effected.  
+  
+insert into ProjectLevelErrorlog(StatusCode, ErrorMessage, StackTraceError,InnerExceptionError,ErrorLogTime,username)values(@StatusCode,@ErrorMessage,@StackTraceError,@InnerExceptionError,GETDATE(),@username)  
+end 
+--------------
+---PLEASE RUN THIS SCRIPT IN HOTEL MANAGEMENT DATABASE--------------
+GO
+create table ProjectLevelLog(Id int identity(1,1) primary key,username varchar(100),LogLevel varchar(max),MessageTemplate varchar(max),LogDate datetime)
+Go
+
+Create procedure Usp_ProjectLevelLog(@username varchar(max),@LogLevel varchar(max),@MessageTemplate varchar(max))
+as 
+begin 
+set nocount on
+insert into ProjectLevelLog(username,LogLevel,MessageTemplate,LogDate) values(@username,@LogLevel,@MessageTemplate,GETDATE())
+end
+Go
+Select * from ProjectLevelLog
+GO
