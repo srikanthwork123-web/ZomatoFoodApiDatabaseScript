@@ -2519,11 +2519,11 @@ insert into ProjectLevelErrorlog(StatusCode, ErrorMessage, StackTraceError,Inner
 end 
 --------------
 ---PLEASE RUN THIS SCRIPT IN HOTEL MANAGEMENT DATABASE--------------
-GO
-create table ProjectLevelLog(Id int identity(1,1) primary key,username varchar(100),LogLevel varchar(max),MessageTemplate varchar(max),LogDate datetime)
-Go
+--GO
+--create table ProjectLevelLog(Id int identity(1,1) primary key,username varchar(100),LogLevel varchar(max),MessageTemplate varchar(max),LogDate datetime)
+--Go
 
-Create procedure Usp_ProjectLevelLog(@username varchar(max),@LogLevel varchar(max),@MessageTemplate varchar(max))
+Create OR ALTER procedure Usp_ProjectLevelLog(@username varchar(max),@LogLevel varchar(max),@MessageTemplate varchar(max))
 as 
 begin 
 set nocount on
